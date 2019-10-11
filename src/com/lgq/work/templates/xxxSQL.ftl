@@ -1,0 +1,16 @@
+package ${packagePath};
+
+import java.util.List;
+
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+
+import ${objPath};
+
+public interface ${sqlName} extends JpaRepository<${obj}, ${primaryKey}>,JpaSpecificationExecutor<${obj}> {
+
+    List<${obj}> findByDeleteBy(String deleteBy);
+    List<${obj}> findByDeleteBy(String deleteBy,Pageable pageable);
+}
